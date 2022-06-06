@@ -24,8 +24,8 @@
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/Keranjang"
-              >Keranjang <i class="bi bi-bag"></i>
+            <router-link class="nav-link" to="/Cart"
+              >Cart <i class="bi bi-bag"></i>
               <span class="badge bg-success ms-2">0</span>
             </router-link>
           </li>

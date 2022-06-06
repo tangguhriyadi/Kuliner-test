@@ -31,7 +31,7 @@
     <!-- mobile -->
     <div class="d-sm-block d-md-none">
       <div class="row mt-2">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-3">
           <img
             class="mainpic"
             src="../assets/images/main.png"
