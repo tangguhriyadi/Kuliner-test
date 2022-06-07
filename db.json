@@ -103,12 +103,12 @@
     {
       "totalItem": 1,
       "products": {
-        "id": 1,
-        "code": "K-01",
-        "name": "Toppokki",
+        "id": 2,
+        "code": "K-02",
+        "name": "Odeng",
         "price": 15000,
         "isReady": true,
-        "gambar": "toppokki.png"
+        "gambar": "odeng.jpg"
       },
       "id": 1
     }

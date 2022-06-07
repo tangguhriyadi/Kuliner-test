@@ -53,7 +53,7 @@
                   <td>{{ cart.totalItem }} Pcs</td>
                   <td>Rp.{{ cart.products.price }}</td>
                   <td><strong>Rp.{{ cart.products.price * cart.totalItem }}</strong> </td>
-                  <td class="text-danger"><i class="bi bi-trash" @click="deleteItem(cart.id)"></i></td>
+                  <td class="text-danger"><i class="bi bi-trash" @click="deleteItem(cart.id)" style="cursor:pointer;"></i></td>
                 </tr>
 
                 <tr>
