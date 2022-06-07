@@ -102,42 +102,15 @@
   "keranjang": [
     {
       "totalItem": 1,
-      "note": "pedas",
       "products": {
-        "id": 2,
-        "code": "K-02",
-        "name": "Odeng",
+        "id": 1,
+        "code": "K-01",
+        "name": "Toppokki",
         "price": 15000,
         "isReady": true,
-        "gambar": "odeng.jpg"
+        "gambar": "toppokki.png"
       },
       "id": 1
-    },
-    {
-      "totalItem": 1,
-      "note": "asd",
-      "products": {
-        "id": 2,
-        "code": "K-02",
-        "name": "Odeng",
-        "price": 15000,
-        "isReady": true,
-        "gambar": "odeng.jpg"
-      },
-      "id": 2
-    },
-    {
-      "totalItem": 1,
-      "note": "wewea",
-      "products": {
-        "id": 2,
-        "code": "K-02",
-        "name": "Odeng",
-        "price": 15000,
-        "isReady": true,
-        "gambar": "odeng.jpg"
-      },
-      "id": 3
     }
   ],
   "pesanan": []

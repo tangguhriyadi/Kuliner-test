@@ -26,7 +26,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/CartView"
               >Cart <i class="bi bi-bag"></i>
-              <span class="badge bg-success ms-2">{{ totalItem.length }}</span>
+              <span class="badge bg-success ms-2">{{
+                updateCart ? updateCart.length : totalItem.length
+              }}</span>
             </router-link>
           </li>
         </ul>
@@ -36,20 +38,21 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "NavbarComp",
-  data(){
+  data() {
     return {
       totalItem: [],
-    }
+    };
   },
+  props: ["updateCart"],
   methods: {
-    setTotalItem(data){
-      this.totalItem = data
-    }
+    setTotalItem(data) {
+      this.totalItem = data;
+    },
   },
-  mounted(){
+  mounted() {
     axios
       .get("http://localhost:3000/keranjang/")
       .then((response) => this.setTotalItem(response.data))

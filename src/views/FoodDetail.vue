@@ -62,7 +62,7 @@
               class="btn btn-success mt-2"
               @click="setOrder"
             >
-              Order Now
+              <i class="bi-cart"></i> Add to Cart
             </button>
           </form>
         </div>
