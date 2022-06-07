@@ -24,9 +24,9 @@
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/Cart"
+            <router-link class="nav-link" to="/CartView"
               >Cart <i class="bi bi-bag"></i>
-              <span class="badge bg-success ms-2">0</span>
+              <span class="badge bg-success ms-2">{{ totalItem.length }}</span>
             </router-link>
           </li>
         </ul>
@@ -36,8 +36,25 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "NavbarComp",
+  data(){
+    return {
+      totalItem: [],
+    }
+  },
+  methods: {
+    setTotalItem(data){
+      this.totalItem = data
+    }
+  },
+  mounted(){
+    axios
+      .get("http://localhost:3000/keranjang/")
+      .then((response) => this.setTotalItem(response.data))
+      .catch((error) => console.log(error));
+  },
 };
 </script>
 

@@ -1,104 +1,144 @@
 {
-    "best-product":[
-        {
-            "id":1,
-            "code":"K-01",
-            "name":"Toppokki",
-            "price": 15000,
-            "isReady":true,
-            "gambar":"toppokki.png"
-        },
-        {
-            "id":2,
-            "code":"K-02",
-            "name":"Odeng",
-            "price": 15000,
-            "isReady":true,
-            "gambar":"odeng.jpg"
-        },
-        {
-            "id":3,
-            "code":"K-03",
-            "name":"Sundubu Jiggae",
-            "price": 25000,
-            "isReady":true,
-            "gambar":"sundubu.jpg"
-        }
-    ],
-    "products":[
-        {
-            "id":1,
-            "code":"K-01",
-            "name":"Toppokki",
-            "price": 15000,
-            "isReady":true,
-            "gambar":"toppokki.png"
-        },
-        {
-            "id":2,
-            "code":"K-02",
-            "name":"Odeng",
-            "price": 15000,
-            "isReady":true,
-            "gambar":"odeng.jpg"
-        },
-        {
-            "id":3,
-            "code":"K-03",
-            "name":"Sundubu Jiggae",
-            "price": 25000,
-            "isReady":true,
-            "gambar":"sundubu.jpg"
-        },
-        {
-            "id":4,
-            "code":"K-04",
-            "name":"Rabbokki",
-            "price": 25000,
-            "isReady":true,
-            "gambar":"rabbokki.png"
-        },
-        {
-            "id":5,
-            "code":"K-05",
-            "name":"Jajangmyeon",
-            "price": 20000,
-            "isReady":true,
-            "gambar":"jajangmyeon.jpg"
-        },
-        {
-            "id":6,
-            "code":"K-06",
-            "name":"Jjampong",
-            "price": 20000,
-            "isReady":true,
-            "gambar":"jjampong.jpg"
-        },
-        {
-            "id":7,
-            "code":"K-07",
-            "name":"Corndog",
-            "price": 15000,
-            "isReady":true,
-            "gambar":"corndog.jpg"
-        },
-        {
-            "id":8,
-            "code":"K-08",
-            "name":"Kimchi",
-            "price": 7000,
-            "isReady":true,
-            "gambar":"kimchi.png"
-        },
-        {
-            "id":9,
-            "code":"K-09",
-            "name":"Rendang",
-            "price": 18000,
-            "isReady":true,
-            "gambar":"rendang.jpg"
-        }
-    ],
-    "keranjang":[],
-    "pesanan":[]
+  "best-product": [
+    {
+      "id": 1,
+      "code": "K-01",
+      "name": "Toppokki",
+      "price": 15000,
+      "isReady": true,
+      "gambar": "toppokki.png"
+    },
+    {
+      "id": 2,
+      "code": "K-02",
+      "name": "Odeng",
+      "price": 15000,
+      "isReady": true,
+      "gambar": "odeng.jpg"
+    },
+    {
+      "id": 3,
+      "code": "K-03",
+      "name": "Sundubu Jiggae",
+      "price": 25000,
+      "isReady": true,
+      "gambar": "sundubu.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "code": "K-01",
+      "name": "Toppokki",
+      "price": 15000,
+      "isReady": true,
+      "gambar": "toppokki.png"
+    },
+    {
+      "id": 2,
+      "code": "K-02",
+      "name": "Odeng",
+      "price": 15000,
+      "isReady": true,
+      "gambar": "odeng.jpg"
+    },
+    {
+      "id": 3,
+      "code": "K-03",
+      "name": "Sundubu Jiggae",
+      "price": 25000,
+      "isReady": true,
+      "gambar": "sundubu.jpg"
+    },
+    {
+      "id": 4,
+      "code": "K-04",
+      "name": "Rabbokki",
+      "price": 25000,
+      "isReady": true,
+      "gambar": "rabbokki.png"
+    },
+    {
+      "id": 5,
+      "code": "K-05",
+      "name": "Jajangmyeon",
+      "price": 20000,
+      "isReady": true,
+      "gambar": "jajangmyeon.jpg"
+    },
+    {
+      "id": 6,
+      "code": "K-06",
+      "name": "Jjampong",
+      "price": 20000,
+      "isReady": true,
+      "gambar": "jjampong.jpg"
+    },
+    {
+      "id": 7,
+      "code": "K-07",
+      "name": "Corndog",
+      "price": 15000,
+      "isReady": true,
+      "gambar": "corndog.jpg"
+    },
+    {
+      "id": 8,
+      "code": "K-08",
+      "name": "Kimchi",
+      "price": 7000,
+      "isReady": true,
+      "gambar": "kimchi.png"
+    },
+    {
+      "id": 9,
+      "code": "K-09",
+      "name": "Rendang",
+      "price": 18000,
+      "isReady": true,
+      "gambar": "rendang.jpg"
+    }
+  ],
+  "keranjang": [
+    {
+      "totalItem": 1,
+      "note": "pedas",
+      "products": {
+        "id": 2,
+        "code": "K-02",
+        "name": "Odeng",
+        "price": 15000,
+        "isReady": true,
+        "gambar": "odeng.jpg"
+      },
+      "id": 1
+    },
+    {
+      "totalItem": 1,
+      "note": "asd",
+      "products": {
+        "id": 2,
+        "code": "K-02",
+        "name": "Odeng",
+        "price": 15000,
+        "isReady": true,
+        "gambar": "odeng.jpg"
+      },
+      "id": 2
+    },
+    {
+      "totalItem": 1,
+      "note": "wewea",
+      "products": {
+        "id": 2,
+        "code": "K-02",
+        "name": "Odeng",
+        "price": 15000,
+        "isReady": true,
+        "gambar": "odeng.jpg"
+      },
+      "id": 3
+    }
+  ],
+  "pesanan": []
 }

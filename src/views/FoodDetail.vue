@@ -2,8 +2,6 @@
   <div class="food-detail">
     <Navbar />
     <div class="container">
-
-
       <div class="row bg-light mt-5">
         <div class="col">
           <nav aria-label="breadcrumb">
@@ -12,7 +10,9 @@
                 <router-link to="/" class="text-dark">Home</router-link>
               </li>
               <li class="breadcrumb-item">
-                <router-link to="/FoodsView" class="text-dark">Foods</router-link>
+                <router-link to="/FoodsView" class="text-dark"
+                  >Foods</router-link
+                >
               </li>
               <li class="breadcrumb-item active" aria-current="page">
                 Food Order
@@ -24,21 +24,46 @@
 
       <div class="row">
         <div class="col-md-6">
-          <img :src="'../assets/images/' + product.gambar" alt="" class="img-fluid shadow">
+          <img
+            :src="'../assets/images/' + product.gambar"
+            alt=""
+            class="img-fluid shadow"
+          />
         </div>
         <div class="col-md-6">
-          <h2><strong>{{product.name}}</strong></h2>
-          <h4>Price : <strong>Rp.{{ product.price }}</strong></h4>
-          <form action="">
+          <h2>
+            <strong>{{ product.name }}</strong>
+          </h2>
+          <h4>
+            Price : <strong>Rp.{{ product.price }}</strong>
+          </h4>
+          <form action="" class="mt-4" @submit.prevent>
             <div class="form-group">
               <label for="totalItem">Total Item:</label>
-              <input type="number" class="form-control" id="totalItem" min="0" value="1">
+              <input
+                type="number"
+                class="form-control"
+                id="totalItem"
+                v-model="order.totalItem"
+              />
             </div>
             <div class="form-group">
-              <label for="Note">Note:</label>
-              <textarea class="form-control" placeholder="ex: spicy, additional spoon, extra onion" name="" id="Note"></textarea>
+              <label for="note">Note:</label>
+              <textarea
+                class="form-control"
+                placeholder="ex: spicy, additional spoon, extra onion"
+                name=""
+                id="note"
+                v-model="order.note"
+              ></textarea>
             </div>
-            <button type="submit" class="btn btn-success mt-2">Order Now</button>
+            <button
+              type="submit"
+              class="btn btn-success mt-2"
+              @click="setOrder"
+            >
+              Order Now
+            </button>
           </form>
         </div>
       </div>
@@ -51,7 +76,7 @@
 <script>
 import FooterComp from "@/components/Footer.vue";
 import Navbar from "@/components/Navbar.vue";
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "FoodDetail",
   components: {
@@ -60,17 +85,43 @@ export default {
   },
   data() {
     return {
-      product: [],
-    };
+      product: {},
+      order: {}
+    }
   },
   methods: {
     setProduct(data) {
       this.product = data;
     },
+    setOrder() {
+      if(this.order.totalItem){
+      this.$router.push({ path: "/CartView" })
+      this.order.products = this.product;
+      axios
+        .post('http://localhost:3000/keranjang', this.order)
+        .then(() => {
+          this.$toast.success("Added to Cart", {
+            type:"success",
+            position:"top-right",
+            duration:3000,
+            dismissible:true
+          })
+        })
+        .catch((err) => console.log(err))
+      }else {
+        this.$toast.error("Please fill the total Item", {
+            type:"error",
+            position:"top-right",
+            duration:3000,
+            dismissible:true
+          })
+      }
+      
+    }
   },
   mounted() {
     axios
-      .get("http://localhost:3000/products/"+this.$route.params.id)
+      .get("http://localhost:3000/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },
