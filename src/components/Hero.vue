@@ -10,9 +10,9 @@
                 <strong>Delicious Food Menu, </strong> <br />
                 in Your Gadget
                 <p>Choose your favorite food !</p>
-                <button class="btn btn-lg btn-success">
+                <router-link class="btn btn-lg btn-success" to="/FoodsView">
                   <i class="bi bi-arrow-right"></i> Order Here
-                </button>
+                </router-link>
               </h2>
             </div>
           </div>
