@@ -1,6 +1,6 @@
 <template>
   <div class="cart">
-    <NavbarComp :updateCart="carts"/>
+    <NavbarComp :updateCart="carts" />
     <div class="container">
       <!-- Breadcrumb -->
       <div class="row bg-light mt-5">
@@ -52,21 +52,65 @@
                   <td>{{ cart.note ? cart.note : "-" }}</td>
                   <td>{{ cart.totalItem }} Pcs</td>
                   <td>Rp.{{ cart.products.price }}</td>
-                  <td><strong>Rp.{{ cart.products.price * cart.totalItem }}</strong> </td>
-                  <td class="text-danger"><i class="bi bi-trash" @click="deleteItem(cart.id)" style="cursor:pointer;"></i></td>
+                  <td>
+                    <strong
+                      >Rp.{{ cart.products.price * cart.totalItem }}</strong
+                    >
+                  </td>
+                  <td class="text-danger">
+                    <i
+                      class="bi bi-trash"
+                      @click="deleteItem(cart.id)"
+                      style="cursor: pointer"
+                    ></i>
+                  </td>
                 </tr>
 
                 <tr>
-                    <td colspan="6" align="right">Total Amount :</td>
+                  <td colspan="6" align="right">Total Amount :</td>
 
-                    <td  align="right">
-                        <strong>Rp.{{ totalPrice }}</strong> 
-                    </td>
-                    <td></td>
+                  <td align="right">
+                    <strong>Rp.{{ totalPrice }}</strong>
+                  </td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+
+      <!-- checkout -->
+      <div class="row justify-content-end">
+        <div class="col-md-4">
+          <form action="" class="mt-4" @submit.prevent>
+            <div class="form-group">
+              <label for="nama">Name :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                v-model="order.nama"
+              />
+            </div>
+            <div class="form-group">
+              <label for="noMeja">Table Number :</label>
+              <input
+                type="number"
+                class="form-control"
+                id="noMeja"
+                v-model="order.noMeja"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-success mt-2 float-end"
+              @click="checkout"
+            >
+              <i class="bi-cart"></i> Chekout
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -84,30 +128,60 @@ export default {
   data() {
     return {
       carts: [],
+      order: {}
     };
   },
   methods: {
     setCarts(data) {
       this.carts = data;
     },
-    deleteItem(id){
-        axios
-      .delete("http://localhost:3000/keranjang/"+id)
-      .then(() => {
+    deleteItem(id) {
+      axios
+        .delete("http://localhost:3000/keranjang/" + id)
+        .then(() => {
           this.$toast.error("Delete Success", {
-            type:"error",
+            type: "error",
+            position: "top-right",
+            duration: 3000,
+            dismissible: true,
+          });
+          /* update data realtime */
+          axios
+            .get("http://localhost:3000/keranjang/")
+            .then((response) => this.setCarts(response.data))
+            .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
+    },
+    checkout(){
+      if(this.order.nama && this.order.noMeja){
+        this.order.carts = this.carts
+        axios
+        .post('http://localhost:3000/pesanan', this.order)
+        .then(() => {
+          // delete cart
+          this.carts.map((item) => {
+            return axios
+        .delete("http://localhost:3000/keranjang/" + item.id)
+        .catch((error) => console.log(error));
+          })
+          this.$router.push({path:"/CompletedView"})
+          this.$toast.success("Added to Cart", {
+            type:"success",
             position:"top-right",
             duration:3000,
             dismissible:true
           })
-          /* update data realtime */
-          axios
-      .get("http://localhost:3000/keranjang/")
-      .then((response) => this.setCarts(response.data))
-      .catch((error) => console.log(error));
-      })
-      .catch((error) => console.log(error));
-      
+        })
+        .catch((err) => console.log(err))
+      } else {
+        this.$toast.error("Please Fill The Empty Field", {
+            type: "error",
+            position: "top-right",
+            duration: 3000,
+            dismissible: true,
+          });
+      }
     }
   },
   mounted() {
@@ -117,12 +191,12 @@ export default {
       .catch((error) => console.log(error));
   },
   computed: {
-      totalPrice() {
-          return this.carts.reduce((item, data) => {
-             return item+(data.products.price*data.totalItem)
-          }, 0 )
-      }
-  }
+    totalPrice() {
+      return this.carts.reduce((item, data) => {
+        return item + data.products.price * data.totalItem;
+      }, 0);
+    },
+  },
 };
 </script>
 

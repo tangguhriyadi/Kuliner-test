@@ -99,19 +99,26 @@
       "gambar": "rendang.jpg"
     }
   ],
-  "keranjang": [
+  "keranjang": [],
+  "pesanan": [
     {
-      "totalItem": 1,
-      "products": {
-        "id": 2,
-        "code": "K-02",
-        "name": "Odeng",
-        "price": 15000,
-        "isReady": true,
-        "gambar": "odeng.jpg"
-      },
+      "nama": "Jabdam Bar",
+      "noMeja": 1,
+      "carts": [
+        {
+          "totalItem": 1,
+          "products": {
+            "id": 2,
+            "code": "K-02",
+            "name": "Odeng",
+            "price": 15000,
+            "isReady": true,
+            "gambar": "odeng.jpg"
+          },
+          "id": 1
+        }
+      ],
       "id": 1
     }
-  ],
-  "pesanan": []
+  ]
 }

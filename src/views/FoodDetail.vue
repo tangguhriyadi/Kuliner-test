@@ -95,12 +95,12 @@ export default {
     },
     setOrder() {
       if(this.order.totalItem){
-      this.$router.push({ path: "/CartView" })
       this.order.products = this.product;
       axios
         .post('http://localhost:3000/keranjang', this.order)
         .then(() => {
-          this.$toast.success("Added to Cart", {
+          this.$router.push({ path: "/CartView" })
+          this.$toast.success("Chekout Completed", {
             type:"success",
             position:"top-right",
             duration:3000,
