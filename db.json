@@ -99,7 +99,20 @@
       "gambar": "rendang.jpg"
     }
   ],
-  "keranjang": [],
+  "keranjang": [
+    {
+      "totalItem": 1,
+      "products": {
+        "id": 1,
+        "code": "K-01",
+        "name": "Toppokki",
+        "price": 15000,
+        "isReady": true,
+        "gambar": "toppokki.png"
+      },
+      "id": 1
+    }
+  ],
   "pesanan": [
     {
       "nama": "Jabdam Bar",

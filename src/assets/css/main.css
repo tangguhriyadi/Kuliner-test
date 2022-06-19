@@ -24,6 +24,10 @@
     color:black;
 }
 
+.cardimg {
+    max-height: 180px;
+}
+
 @media screen and (max-width:768px) {
     .mainpic {
         width:100%;
