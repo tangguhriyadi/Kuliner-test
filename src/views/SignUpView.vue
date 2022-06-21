@@ -48,6 +48,18 @@
               required
             />
           </div>
+          <div class="mb-3">
+            <label for="ConfirmPassword" class="form-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="ConfirmPassword"
+              v-model="user.confirmPassword"
+              required
+            />
+          </div>
           
           <button type="submit" class="btn btn-primary">Signup</button>
         </form>
@@ -57,10 +69,13 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name:'SignUpView',
     methods:{
-        signup(){
+        async signup(){
+           await axios.post('register', this.user)
+            /* console.log(response) */
             this.$router.push('/Login')
         }
     },
