@@ -99,39 +99,6 @@
       "gambar": "rendang.jpg"
     }
   ],
-  "keranjang": [
-    {
-      "totalItem": 1,
-      "products": {
-        "id": 1,
-        "code": "K-01",
-        "name": "Toppokki",
-        "price": 15000,
-        "isReady": true,
-        "gambar": "toppokki.png"
-      },
-      "id": 1
-    }
-  ],
-  "pesanan": [
-    {
-      "nama": "Jabdam Bar",
-      "noMeja": 1,
-      "carts": [
-        {
-          "totalItem": 1,
-          "products": {
-            "id": 2,
-            "code": "K-02",
-            "name": "Odeng",
-            "price": 15000,
-            "isReady": true,
-            "gambar": "odeng.jpg"
-          },
-          "id": 1
-        }
-      ],
-      "id": 1
-    }
-  ]
+  "keranjang": [],
+  "pesanan": []
 }

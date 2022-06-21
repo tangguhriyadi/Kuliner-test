@@ -4,6 +4,8 @@ import FoodsView from '../views/FoodsView.vue'
 import FoodDetail from '../views/FoodDetail.vue'
 import CartView from '../views/CartView.vue'
 import CompletedView from '../views/CompletedView.vue'
+import LoginView from '../views/LoginView.vue'
+import SignUpView from '../views/SignUpView.vue'
 
 
 const routes = [
@@ -31,6 +33,16 @@ const routes = [
     path: '/CompletedView',
     name: 'CompletedView',
     component: CompletedView
+  },
+  {
+    path: '/Login',
+    name: 'LoginView',
+    component:LoginView
+  },
+  {
+    path: '/Signup',
+    name: 'SignUpView',
+    component:SignUpView
   },
   {
     path: '/about',
