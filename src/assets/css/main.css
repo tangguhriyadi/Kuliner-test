@@ -27,12 +27,13 @@
 .cardimg {
     max-height: 180px;
 }
-.bg {
-    background: url(../converse.jpg) no-repeat;
-    width: 100%;
+/* .bg {
+    background: url(../logo.png) no-repeat;
+    width: 50%;
     height: 100vh;
     background-size: 100%;
-}
+    
+} */
 .form-container {
     background-color: #fff;
     padding: 30px;

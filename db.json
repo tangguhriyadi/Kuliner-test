@@ -101,6 +101,13 @@
   ],
   "keranjang": [],
   "pesanan": [],
-  "register": [],
-  "login": []
+  "user": [
+    {
+      "email": "sevenofspadesfh@gmail.com",
+      "username": "tangguh",
+      "password": "Stronghold2",
+      "confirmPassword": "Stronghold2",
+      "id": 1
+    }
+  ]
 }
